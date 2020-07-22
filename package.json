@@ -1,0 +1,23 @@
+{
+  "name": "dailyfarm",
+  "version": "1.0.0",
+  "description": "## Objective The appliacation aim at tracking daily activites of a daily farm with a view to enhance productivity and manage cost.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NNJAMBI/DAIRY-FARM-MANAGEMENT-SYSTEM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NNJAMBI/DAIRY-FARM-MANAGEMENT-SYSTEM/issues"
+  },
+  "homepage": "https://github.com/NNJAMBI/DAIRY-FARM-MANAGEMENT-SYSTEM#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
