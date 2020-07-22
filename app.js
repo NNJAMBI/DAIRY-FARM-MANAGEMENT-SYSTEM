@@ -1,16 +1,36 @@
 // Import express package
 const express = require('express');
+const mongoose = require('mongoose');
+
+let indexRouter = require('./routes/index');
+
+//Connecting to DB
+let mongoUrl = 'mongodb://localhost:27017/';
+let dbName = 'dailyfarm';
+mongoose.connect(mongoUrl + dbName, { useNewUrlParser: true });
+let db = mongoose.connection;
+
+//Test Connection
+db.once('open', ()=>{
+    console.log('Database connected successfully');
+});
+
+//Test Connection Error
+db.on('error', (error)=>{
+    console.log(error);
+});
 
 // Initialize express
 const app = express();
 
+// Set up a view engine
+app.set('view engine', 'ejs');
+
 // Set a static folder
 app.use(express.static('public'));
 
-// route for the index page
-app.get('/', (req, res)=>{
-    response.send('<h1> Welcome to my app</h1>')
-});
+// Define the index router
+app.use('/', indexRouter);
 
 // Define the port number
 const PORT = 8000;
