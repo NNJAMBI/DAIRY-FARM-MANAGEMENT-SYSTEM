@@ -83,17 +83,40 @@
             <hr class="d-sm-none">
         </div>
         <div class="col-sm-8">
-            <h2>Feed Stocking</h2>
-            <h5>Add new item to be stocked, July 23, 2020</h5>
-            <p>More Description</p>
+            <h2>Create User</h2>
+            <p>Please fill up the form below to add user.</p>
             <form action="/action_page.php">
                 <div class="form-group">
-                    <label for="name">name:</label>
-                    <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" name="firstName" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">name:</label>
-                    <input type="password" class="form-control" id="name" placeholder="Enter name" name="name">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">User Name:</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role:</label>
+                    <select class="form-control" id="role" name="role" required>
+                        <option value="">Select Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="guest">Guest</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="cpassword">Confirm Password:</label>
+                    <input type="password" class="form-control" id="cpassword" placeholder="Confirm password" name="cpassword" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

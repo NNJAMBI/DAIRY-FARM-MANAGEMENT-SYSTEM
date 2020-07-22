@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 let indexRouter = require('./routes/index');
+//let createUserRouter = require('./routes/createUser')
 
 //Connecting to DB
 let mongoUrl = 'mongodb://localhost:27017/';
@@ -31,6 +32,7 @@ app.use(express.static('public'));
 
 // Define the index router
 app.use('/', indexRouter);
+//app.use('/create-user', )
 
 // Define the port number
 const PORT = 8000;

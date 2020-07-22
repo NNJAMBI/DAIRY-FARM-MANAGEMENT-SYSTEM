@@ -2,10 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
-    name: String,
+    firstName: String,
+    lastName: String,
     usermane: String,
     email: String,
     password: String,
+    role: String,
     dateCreated: {
         type: Date,
         default: Date()
