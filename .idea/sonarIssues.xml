@@ -43,12 +43,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/routes/dashboard.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/routes/index.js">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/views/createUser.ejs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/views/dashboard.ejs">
           <value>
             <set />
           </value>

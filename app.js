@@ -2,7 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-let indexRouter = require('./routes/index');
+let indexRouter = require('./routes/dashboard');
 //let createUserRouter = require('./routes/createUser')
 
 //Connecting to DB
