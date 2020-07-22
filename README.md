@@ -1,7 +1,10 @@
-# Gallery App - Daniel Kinyanjui
+# Dairy Farm Management System
+
+## Objective
+The appliacation aim at tracking daily activites of a daily farm with a view to enhance productivity and manage cost.
 
 ## Description
-This is a demo of how you can build a simple web page using **Express Node.js Framework**, **Node.js**,**JQUERY**, **HTML** and **CSS**(Bootstrap) as well as how version your code using **GIT**.
+This system is made using **Express Node.js Framework**, **Node.js**, **JQUERY**, **HTML** and **CSS**(Bootstrap) as well as how version your code using **GIT**.
 
 ## Setup Requirements
 * Clone or Fork the project from github on this link: https://github.com/NNJAMBI/DAIRY-FARM-MANAGEMENT-SYSTEM.git 
