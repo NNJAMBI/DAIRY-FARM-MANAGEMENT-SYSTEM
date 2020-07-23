@@ -34,8 +34,11 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 // Body Parser Middleware
+app.use(express.urlencoded({
+    extended: true
+}));
 app.use(express.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(bodyParser.json());
 
 // Define the index router

@@ -47,7 +47,7 @@
                 <a class="nav-link" href="#">Login</a>
             </li>
             <li class="nav-item float-right">
-                <a class="nav-link" href="#">Sign Up</a>
+                <a class="nav-link" href="#">Create User</a>
             </li>
         </ul>
     </div>
@@ -85,15 +85,14 @@
         <div class="col-sm-8">
             <h2>Create User</h2>
             <p>Please fill up the form below to add user.</p>
-            <p>
-                kk
+            <p class="border-success">
                 <% if (typeof msg !== 'undefined'){ %>
                     <%= msg %>
                 <% } else {%>
                     <%= msg='' %>
                 <% } %>
             </p>
-            <form action="/save-user" method="POST" enctype="multipart/form-data">
+            <form action="/save-user" method="POST">
                 <div class="form-group">
                     <label for="firstName">First Name:</label>
                     <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" name="firstName" required>

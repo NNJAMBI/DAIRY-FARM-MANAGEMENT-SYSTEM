@@ -5,28 +5,22 @@ const User = require('../model/users');
 // const { sanitizeBody } = require('express-validator/filter');
 
 router.get('/', (req, res)=> {
-    res.render('dashboard');
+    res.render('dashboard', {msg: req.query.msg});
 });
 
 router.get('/create-user', (req, res)=>{
-    res.render('createUser');
+    res.render('createUser', {msg: req.query.msg});
 });
 
 router.get('/vetinary', (req, res)=>{
-    res.render('vetinary');
+    res.render('vetinary', {msg: req.query.msg});
 });
 router.get('/feedstocking', (req, res)=>{
-    res.render('feedsstocking');
+    res.render('feedsstocking', {msg: req.query.msg});
 });
 
 router.post('/save-user', (req, res)=>{
-    console.log(req);
-    console.log(req.query.firstName)
-    //saveUser(req, res, (err)=>{
-    //     if(err) {
-    //         console.log(err);
-    //         res.render('createUser', {msg: err})
-    //     } else
+    console.log(req.body);
         if(req.body.firstName === '' && req.body.firstName.length <= 2 && req.body.firstName.length >= 20) {
             res.redirect('/create-user?msg=Oops, first name cannot be blank or less than 2 characters.');
         } else if(req.body.lastName === '' && req.body.lastName.length <= 2 && req.body.lastName.length >= 20){
@@ -55,7 +49,6 @@ router.post('/save-user', (req, res)=>{
                 res.redirect('/create-user?msg=Oops, please retry again.');
             }
         }
-    //});
 });
 
 module.exports = router;
