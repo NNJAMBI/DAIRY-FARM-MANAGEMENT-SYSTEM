@@ -51,4 +51,8 @@ router.post('/save-user', (req, res)=>{
         }
 });
 
+router.get('/employees', (req, res)=>{
+    res.render('Employees');
+});
+
 module.exports = router;
