@@ -41,8 +41,16 @@
             <li class="nav-item">
                 <a class="nav-link active" href="/vetinary">Vetinary</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/milkProduction">Milk Records</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Milk Records
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="milkProduction">Add Record</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/get-all-milk-records">View Records</a>
+                </div>
+                <a class="nav-link" href="/milkProduction"></a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -56,13 +64,23 @@
     </div>
 </nav>
 
+<div>
+  <h2>Create User</h2>
+  <p>Please fill up the form below to add user.</p>
+  <p class="border-success">
+      <% if (typeof msg !== 'undefined'){ %>
+          <%= msg %>
+      <% } else {%>
+          <%= msg='' %>
+      <% } %>
+  </p>
+<form action="/vet-info" method="POST">
 <form>
     <form>
-
        
         <div class="form-row  mx-2 align-items-center">
           <div class="col-sm-3 mx-2 my-1">
-            <label class="mr-sm-2" for="inlineFormCustomSelect">Type of Cow</label>
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Type of Breed</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
               <option selected>Choose...</option>
               <option value="1">Fresian</option>
@@ -85,19 +103,16 @@
 
 
                     <div class="col-sm-3  mx-2 my-1">
-                        <label class="mr-sm-2" for="inlineFormCustomSelect">Last Vet Check Up</label>
+                        <label class="mr-sm-2" for="inlineFormCustomSelect">Issue found</label>
                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
                           <option selected>Choose...</option>
-                          <option value="1">A few days</option>
-                          <option value="2">More than Two Weeks</option>
-                          <option value="3">Month and above</option>
+                          <option value="1">Foot and Mouth</option>
+                          <option value="2">Rift Valley Fever</option>
+                          <option value="3">Anthrax</option>
                         </select>
                         </div>
 
             </div>
-
-
-            
         </div>
 
         <fieldset class="form-group ">
@@ -106,13 +121,13 @@
               <legend class="col-form-label col-sm-4 ">Did Staff Or Your Vet Transport Vaccines To The Farm In A Cool Box, Cool Bag Or Similar?</legend>
               <div class="col-sm-10">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                  <input class="form-check-input" type="radio" name="vaccTransp" id="gridRadios1"  value="option1" checked>
                   <label class="form-check-label" for="gridRadios1">
                     Yes
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                  <input class="form-check-input" type="radio" name="vaccTransp" id="gridRadios2" value="option2">
                   <label class="form-check-label" for="gridRadios2">
                     No
                   </label>
@@ -125,13 +140,13 @@
               <legend class="col-form-label col-sm-4 ">When Collecting Vaccines, Do You Return Immediately To The Farm And Put Them In The Farm Fridge?</legend>
               <div class="col-sm-10">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                  <input class="form-check-input" type="radio" name="vaccStora" id="gridRadios1" value="option1" checked>
                   <label class="form-check-label" for="gridRadios1">
                     Yes
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                  <input class="form-check-input" type="radio" name="vaccStora" id="gridRadios2" value="option2">
                   <label class="form-check-label" for="gridRadios2">
                     No
                   </label>
@@ -143,13 +158,13 @@
               <legend class="col-form-label col-sm-4 ">Did Staff Or Your Vet Transport Vaccines To The Farm In A Cool Box, Cool Bag Or Similar?</legend>
               <div class="col-sm-10">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                  <input class="form-check-input" type="radio" name="vaccHandl" id="gridRadios1" value="option1" checked>
                   <label class="form-check-label" for="gridRadios1">
                     Yes
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                  <input class="form-check-input" type="radio" name="vaccHandl" id="gridRadios2" value="option2">
                   <label class="form-check-label" for="gridRadios2">
                     No
                   </label>
@@ -157,12 +172,7 @@
               </div>
             </div>
             </div>
-          
-          
-          
-          
-          
-            <div class="form-check form-check-inline">
+            <!-- <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
               <label class="form-check-label" for="inlineRadio1">Always</label>
             </div>
@@ -173,6 +183,11 @@
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
               <label class="form-check-label" for="inlineRadio3">Rarely</label>
+            </div> -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+        </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
 

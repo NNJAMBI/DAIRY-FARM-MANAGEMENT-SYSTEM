@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../model/users');
+const Vetrecord = require('../model/vetinary');
+
 const MilkProduction = require('../model/dailyMilkProduction')
 // const { body,validationResult } = require('express-validator/check');
 // const { sanitizeBody } = require('express-validator/filter');
@@ -40,7 +42,7 @@ router.post('/save-milk-production', (req, res)=>{
             quantity: req.body.quantity
         });
         newMilkProduction.save();
-        res.redirect('/milkProduction?msg=Record Saved Successfully.');
+        res.redirect('/get-all-milk-records?msg=Record Saved Successfully.');
     }
 
 });
@@ -77,8 +79,68 @@ router.post('/save-user', (req, res)=>{
         }
 });
 
+router.post('/vet-info', (req, res)=>{
+    console.log(req.body);
+        if(req.body.typeBreed === '') {
+            res.redirect('/create-user?msg=Oops, kindly select type of breed.');
+        } else if(req.body.checkupDur === ''){
+            res.redirect('/create-user?msg=Oops, kindly provide last check up duration.');
+        } else if(req.body.typeDisea === ''){
+            res.redirect('/create-user?msg=Oops, kindly input disease affecting cattle.');
+        } else if(req.body.vaccTransp === '' ){
+            res.redirect('/create-user?msg=Oops, you need to provide answer yes or no.');
+        } else if(req.body.vaccStora === ''){
+            res.redirect('/create-user?msg=Oops, you need to provide answer yes or no.');
+        } else if(req.body.vaccHandl === ''){
+            res.redirect('/create-user?msg=Oops, you need to provide answer yes or no.');
+        } else
+            {
+                let vetSchema = new Vetrecord({
+                    typeBreed: req.body.typeBreed,
+                    checkupDur: req.body.checkupDur,
+                    typeDisea: req.body.typeDisea,
+                    vaccTransp: req.body.vaccTransp,
+                    vaccStora: req.body.vaccStora,
+                    vaccHandl: req.body.vaccHandl
+                 }) ;
+                vetSchema.save();
+                res.redirect('/create-user?msg=User Saved Successfully.');
+                }
+
+});
+
 router.get('/employees', (req, res)=>{
     res.render('Employees');
+});
+
+router.get('/fodder', (req, res)=>{
+    res.render('fodder');
+});
+
+router.get('/get-all-users', (req, res)=>{
+    User.find({}, (error, users)=>{
+        if(error){
+            console.log(error);
+        } else {
+            console.log(users);
+            res.render('allUsers', {
+                users:users
+            })
+        }
+    });
+});
+
+router.get('/get-all-milk-records', (req, res)=>{
+    MilkProduction.find({}, (error, records)=>{
+        if(error){
+            console.log(error);
+        } else {
+            console.log(records);
+            res.render('allMilkRecords', {
+                records:records
+            })
+        }
+    });
 });
 
 module.exports = router;

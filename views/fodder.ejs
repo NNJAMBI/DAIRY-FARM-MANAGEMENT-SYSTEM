@@ -30,13 +30,13 @@
                 <a class="nav-link" href="/feedstocking">Feeds Stocking</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Fodder</a>
+                <a class="nav-link" href="/fodder">Fodder</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Insemination</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="/employees">Employees</a>
+                <a class="nav-link" href="/employees">Employees</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/vetinary">Vetinary</a>
@@ -65,41 +65,25 @@
 </nav>
 
 <div class="col-sm-8">
-    <h2>Employee Records</h2>
-    <h5>Add Employee Records</h5>
-    <p>This is a form where on can add and view employee records</p>
+    <h2>Fodder Entries</h2>
+    
+    <p> Add and change the Fodder Entries</p>
     <form action="/action_page.php">
         <div class="form-group">
-            <label for="name">name:</label>
-            <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
+            <label for="name">Fodder Type:</label>
+            <input type="name" class="form-control" id="name" placeholder="Enter Fodder Type" name="name">
         </div>
         <div class="form-group">
-            <label for="Id number">ID Number:</label>
-            <input type="id number" class="form-control" id="id number" placeholder="Enter ID number" ID number="id number">
+            <label for="Quantities in Buckets">Number of Buckets:</label>
+            <input type="number" class="form-control" id="Number of Buckets" placeholder="Enter No. of Buckets" ID number="number" min="1" max="100" >
         </div>
         <div class="form-group">
-            <label for="Phone Number">Phone Number:</label>
-            <input type="Phone Number" class="form-control" id="Phone Number" placeholder="Enter Phone Number" Phone Number="Phone Number">
+            <label for="Date of Entry">Date of Entry:</label>
+            <input type="Date" class="form-control" id="Date" placeholder="Enter Date" Date of Entry="Date of Entry">
         </div>
         <div class="form-group">
-            <label for="Salary">Salary:</label>
-            <input type="Salary" class="form-control" id="Salary" placeholder="Enter Salary" Salary="Salary">
-        </div>
-        <div class="form-group">
-            <label for="Employement Date">Employement Date:</label>
-            <input type="Employement Date" class="form-control" id="Employement Date" placeholder="Enter Employement Date" Employement Date="Employement Date">
-        </div>
-        <div class="form-group">
-            <label for="name">Termination Date:</label>
-            <input type="Termination Date" class="form-control" id="Termination Date" placeholder="Enter Termination Date" Termination Date="Termination Date">
-        </div>
-        <div class="form-group">
-            <label for="status">Status:</label>
-            <select class="form-control" id="status" name="status" required>
-                <option value="">Select status</option>
-                <option value="Permanent">Permanent</option>
-                <option value="casual">casual</option>
-            </select>
+            <label for="Time of Entry">Time of Entry:</label>
+            <input type="Time" class="form-control" id="Time" placeholder="Enter Time" Time of Entry="TIme of Entry">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -107,23 +91,27 @@
 </div>
 </div>
 
-<div class="container-fluid" style="margin-bottom:0">
-    <div class="row">
-        <div class="col-sm-2 bg-light pt-3">
-            <p class="small">Dairy Farm Management System @ 2020.</p>
-            <hr class="d-sm-none">
-        </div>
-        <div class="col-sm-10 pt-3">
-            <div class="container">
-                <p class="small">
-                    Development Team:
-                    <a href="https://github.com/danjoki/">Daniel Kinyanjui</a> |
-                    <a href="https://github.com/NdiklasTheCoder/">Nicholas Ndiki</a> |
-                    <a href="https://github.com/mbuguap928/">Peter Mbugua</a> |
-                    <a href="https://github.com/darigah/">Douglas Arigah</a> |
-                    <a href="https://github.com/nnjambi/">Nancy Karanja</a> |
-                    <a href="https://github.com/Duncankenji/">Dancun Otieno</a>
-                </p>
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <p>Dairy Farm Management System @ 2020. <br> Development Team</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <ul>
+                    <li>Daniel Kinyanjui</li>
+                    <li>Nicholas Ndiki</li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <ul>
+                    <li>Peter Mbugua</li>
+                    <li>Douglas Arigah</li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <ul>
+                    <li>Nancy Karanja</li>
+                    <li>Dancun Otieno</li>
+                </ul>
             </div>
         </div>
     </div>
