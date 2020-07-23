@@ -55,4 +55,8 @@ router.get('/employees', (req, res)=>{
     res.render('Employees');
 });
 
+router.get('/fodder', (req, res)=>{
+    res.render('fodder');
+});
+
 module.exports = router;
