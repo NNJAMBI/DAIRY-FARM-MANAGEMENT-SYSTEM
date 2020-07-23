@@ -58,20 +58,20 @@ router.post('/save-user', (req, res)=>{
 router.post('/vet-info', (req, res)=>{
     console.log(req.body);
         if(req.body.typeBreed === '') {
-            res.redirect('/create-user?msg=Oops, kindly select type of breed.');
+            res.redirect('/vetinary?msg=Oops, kindly select type of breed.');
         } else if(req.body.checkupDur === ''){
-            res.redirect('/create-user?msg=Oops, kindly provide last check up duration.');
+            res.redirect('/vetinary?msg=Oops, kindly provide last check up duration.');
         } else if(req.body.typeDisea === ''){
-            res.redirect('/create-user?msg=Oops, kindly input disease affecting cattle.');
+            res.redirect('/vetinary?msg=Oops, kindly input disease affecting cattle.');
         } else if(req.body.vaccTransp === '' ){
-            res.redirect('/create-user?msg=Oops, you need to provide answer yes or no.');
+            res.redirect('/vetinary?msg=Oops, you need to provide answer yes or no.');
         } else if(req.body.vaccStora === ''){
-            res.redirect('/create-user?msg=Oops, you need to provide answer yes or no.');
+            res.redirect('/vetinary?msg=Oops, you need to provide answer yes or no.');
         } else if(req.body.vaccHandl === ''){
-            res.redirect('/create-user?msg=Oops, you need to provide answer yes or no.');
+            res.redirect('/vetinary?msg=Oops, you need to provide answer yes or no.');
         } else 
             {
-                let vetSchema = new VetSchema({
+                let vetSchema = new Vetrecord({
                     typeBreed: req.body.typeBreed,
                     checkupDur: req.body.checkupDur,
                     typeDisea: req.body.typeDisea,
@@ -80,7 +80,7 @@ router.post('/vet-info', (req, res)=>{
                     vaccHandl: req.body.vaccHandl
                  }) ;
                 vetSchema.save();
-                res.redirect('/create-user?msg=User Saved Successfully.');
+                res.redirect('/vetinary?msg=User Saved Successfully.');
                 }
 
 });
