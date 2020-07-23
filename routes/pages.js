@@ -15,6 +15,9 @@ router.get('/create-user', (req, res)=>{
 router.get('/vetinary', (req, res)=>{
     res.render('vetinary');
 });
+router.get('/feedstocking', (req, res)=>{
+    res.render('feedsstocking');
+});
 
 router.post('/save-user', (req, res)=>{
     console.log(req);
