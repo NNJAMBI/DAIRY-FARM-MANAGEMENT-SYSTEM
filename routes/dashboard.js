@@ -10,4 +10,8 @@ router.get('/create-user', (req, res)=>{
     res.render('createUser');
 });
 
+router.get('/vetinary', (req, res) => {
+    res.render('vetinary');
+});
+
 module.exports = router;

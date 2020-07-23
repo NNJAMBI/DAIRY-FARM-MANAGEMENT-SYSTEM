@@ -2,7 +2,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+
 let indexRouter = require('./routes/dashboard');
+// let vetinaryRouter = require('./routes/vetinary');
 //let createUserRouter = require('./routes/createUser')
 
 //Connecting to DB
@@ -33,6 +35,8 @@ app.use(express.static('public'));
 // Define the index router
 app.use('/', indexRouter);
 //app.use('/create-user', )
+
+// app.use('/vetinary', vetinaryRouter);
 
 // Define the port number
 const PORT = 8000;
