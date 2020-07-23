@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../model/users');
+const MilkProduction = require('../model/dailyMilkProduction')
 // const { body,validationResult } = require('express-validator/check');
 // const { sanitizeBody } = require('express-validator/filter');
 
@@ -15,8 +16,33 @@ router.get('/create-user', (req, res)=>{
 router.get('/vetinary', (req, res)=>{
     res.render('vetinary', {msg: req.query.msg});
 });
+
 router.get('/feedstocking', (req, res)=>{
     res.render('feedsstocking', {msg: req.query.msg});
+});
+
+router.get('/milkProduction', (req, res)=>{
+    res.render('dailyMilkProduction', {msg: req.query.msg});
+});
+
+router.post('/save-milk-production', (req, res)=>{
+    console.log(req.body);
+    if(req.body.timeStamp === '') {
+        res.redirect('/milkProduction?msg=Oops, timeStamp cannot be blank.');
+    } else if(req.body.cow === '' && req.body.cow.length <= 2 && req.body.cow.length >= 20){
+        res.redirect('/milkProduction?msg=Oops, cow name cannot be blank or less than 2 characters.');
+    } else if(req.body.quantity === '' && req.body.quantity.length <= 0 && req.body.quantity.length >= 50){
+        res.redirect('/milkProduction?msg=Oops, quantity cannot be blank or less than zero.');
+    } else {
+        let newMilkProduction = new MilkProduction({
+            timeStamp: req.body.timeStamp,
+            cow: req.body.cow,
+            quantity: req.body.quantity
+        });
+        newMilkProduction.save();
+        res.redirect('/milkProduction?msg=Record Saved Successfully.');
+    }
+
 });
 
 router.post('/save-user', (req, res)=>{

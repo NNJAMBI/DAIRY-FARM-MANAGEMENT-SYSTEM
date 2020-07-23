@@ -62,8 +62,7 @@ The appliacation aim at tracking daily activites of a daily farm with a view to 
 - Date
 
 ###### Daily Milk Production Data
-- Date
-- Time
+- TimeStamp
 - Cow id
 - Milk(in litre
 

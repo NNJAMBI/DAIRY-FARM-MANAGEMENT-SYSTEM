@@ -42,7 +42,7 @@
                 <a class="nav-link" href="/vetinary">Vetinary</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/milkProduction">Milk Records</a>
+                <a class="nav-link active" href="/milkProduction">Milk Records</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -50,7 +50,7 @@
                 <a class="nav-link" href="#">Login</a>
             </li>
             <li class="nav-item float-right">
-                <a class="nav-link active" href="/create-user">Create User</a>
+                <a class="nav-link" href="/create-user">Create User</a>
             </li>
         </ul>
     </div>
@@ -65,7 +65,7 @@
 
             <ul class="nav nav-pills flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Dashboard</a>
+                    <a class="nav-link " href="/">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/feedstocking">Feeds Stocking</a>
@@ -98,38 +98,18 @@
                     <%= msg='' %>
                 <% } %>
             </p>
-            <form action="/save-user" method="POST">
+            <form action="/save-milk-production" method="POST">
                 <div class="form-group">
-                    <label for="firstName">First Name:</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" name="firstName" required>
+                    <label for="timeStamp">Timestamp:</label>
+                    <input type="datetime-local" class="form-control" id="timeStamp" placeholder="Enter Timestamp" name="timeStamp" required>
                 </div>
                 <div class="form-group">
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" name="lastName" required>
+                    <label for="cow">Heifer Name:</label>
+                    <input type="text" class="form-control" id="cow" placeholder="Enter Cow Name" name="cow" required>
                 </div>
                 <div class="form-group">
-                    <label for="username">User Name:</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="role">Role:</label>
-                    <select class="form-control" id="role" name="role" required>
-                        <option value="">Select Role</option>
-                        <option value="admin">Admin</option>
-                        <option value="guest">Guest</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
-                </div>
-                <div class="form-group">
-                    <label for="cpassword">Confirm Password:</label>
-                    <input type="password" class="form-control" id="cpassword" placeholder="Confirm password" name="cpassword" required>
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" class="form-control" id="quantity" min="0" max="" placeholder="Enter Quantity" name="quantity" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
