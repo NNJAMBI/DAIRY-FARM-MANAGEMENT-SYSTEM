@@ -2,8 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-let indexRouter = require('./routes/dashboard');
-//let createUserRouter = require('./routes/createUser')
+let routes = require('./routes/pages');
 
 //Connecting to DB
 let mongoUrl = 'mongodb://localhost:27017/';
@@ -31,8 +30,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 // Define the index router
-app.use('/', indexRouter);
-//app.use('/create-user', )
+app.use('/', routes);
 
 // Define the port number
 const PORT = 8000;

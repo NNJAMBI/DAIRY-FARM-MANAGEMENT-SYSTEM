@@ -53,6 +53,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/routes/vetinary.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/views/createUser.ejs">
           <value>
             <set />
@@ -69,6 +74,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../gallery_app/app.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gallery_app/routes/index.js">
           <value>
             <set />
           </value>
