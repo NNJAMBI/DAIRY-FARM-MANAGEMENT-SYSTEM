@@ -17,8 +17,8 @@ router.get('/create-user', (req, res)=>{
 router.get('/vetinary', (req, res)=>{
     res.render('vetinary', {msg: req.query.msg});
 });
-router.get('/feedstocking', (req, res)=>{
-    res.render('feedsstocking', {msg: req.query.msg});
+router.get('/feed-stocking', (req, res)=>{
+    res.render('feeds-stocking', {msg: req.query.msg});
 });
 
 router.post('/save-user', (req, res)=>{
