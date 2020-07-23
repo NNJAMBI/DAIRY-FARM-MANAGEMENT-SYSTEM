@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Daily Farm Management System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <style>
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="/">Daily Farm Management System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="template.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Feeds Stocking</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Fodder</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Insemination</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="addEmployee.html">Employees</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="vetinary.html">Vetinary</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item float-right">
+                <a class="nav-link" href="#">Sign Up</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="col-sm-8">
+    <h2>Employee Records</h2>
+    <h5>Add Employee Records</h5>
+    <p>This is a form where on can add and view employee records</p>
+    <form action="/action_page.php">
+        <div class="form-group">
+            <label for="name">name:</label>
+            <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="Id number">ID Number:</label>
+            <input type="id number" class="form-control" id="id number" placeholder="Enter ID number" ID number="id number">
+        </div>
+        <div class="form-group">
+            <label for="Phone Number">Phone Number:</label>
+            <input type="Phone Number" class="form-control" id="Phone Number" placeholder="Enter Phone Number" Phone Number="Phone Number">
+        </div>
+        <div class="form-group">
+            <label for="Salary">Salary:</label>
+            <input type="Salary" class="form-control" id="Salary" placeholder="Enter Salary" Salary="Salary">
+        </div>
+        <div class="form-group">
+            <label for="Employement Date">Employement Date:</label>
+            <input type="Employement Date" class="form-control" id="Employement Date" placeholder="Enter Employement Date" Employement Date="Employement Date">
+        </div>
+        <div class="form-group">
+            <label for="name">Termination Date:</label>
+            <input type="Termination Date" class="form-control" id="Termination Date" placeholder="Enter Termination Date" Termination Date="Termination Date">
+        </div>
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select class="form-control" id="status" name="status" required>
+                <option value="">Select status</option>
+                <option value="Permanent">Permanent</option>
+                <option value="casual">casual</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</div>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <p>Dairy Farm Management System @ 2020. <br> Development Team</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <ul>
+                    <li>Daniel Kinyanjui</li>
+                    <li>Nicholas Ndiki</li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <ul>
+                    <li>Peter Mbugua</li>
+                    <li>Douglas Arigah</li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <ul>
+                    <li>Nancy Karanja</li>
+                    <li>Dancun Otieno</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

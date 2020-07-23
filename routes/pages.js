@@ -14,4 +14,8 @@ router.get('/vetinary', (req, res)=>{
     res.render('vetinary');
 });
 
+router.get('/addsEmployee', (req, res)=>{
+    res.render('addEmployee');
+});
+
 module.exports = router;
