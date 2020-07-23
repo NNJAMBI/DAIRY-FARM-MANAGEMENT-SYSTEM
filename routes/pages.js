@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../model/users');
+const Vetrecord = require('../model/vetinary');
+
 // const { body,validationResult } = require('express-validator/check');
 // const { sanitizeBody } = require('express-validator/filter');
 
@@ -49,6 +51,38 @@ router.post('/save-user', (req, res)=>{
                 res.redirect('/create-user?msg=Oops, please retry again.');
             }
         }
+});
+
+
+
+router.post('/vet-info', (req, res)=>{
+    console.log(req.body);
+        if(req.body.typeBreed === '') {
+            res.redirect('/create-user?msg=Oops, kindly select type of breed.');
+        } else if(req.body.checkupDur === ''){
+            res.redirect('/create-user?msg=Oops, kindly provide last check up duration.');
+        } else if(req.body.typeDisea === ''){
+            res.redirect('/create-user?msg=Oops, kindly input disease affecting cattle.');
+        } else if(req.body.vaccTransp === '' ){
+            res.redirect('/create-user?msg=Oops, you need to provide answer yes or no.');
+        } else if(req.body.vaccStora === ''){
+            res.redirect('/create-user?msg=Oops, you need to provide answer yes or no.');
+        } else if(req.body.vaccHandl === ''){
+            res.redirect('/create-user?msg=Oops, you need to provide answer yes or no.');
+        } else 
+            {
+                let vetSchema = new VetSchema({
+                    typeBreed: req.body.typeBreed,
+                    checkupDur: req.body.checkupDur,
+                    typeDisea: req.body.typeDisea,
+                    vaccTransp: req.body.vaccTransp,
+                    vaccStora: req.body.vaccStora,
+                    vaccHandl: req.body.vaccHandl
+                 }) ;
+                vetSchema.save();
+                res.redirect('/create-user?msg=User Saved Successfully.');
+                }
+
 });
 
 router.get('/employees', (req, res)=>{
