@@ -17,7 +17,7 @@ router.get('/create-user', (req, res)=>{
 router.get('/vetinary', (req, res)=>{
     res.render('vetinary', {msg: req.query.msg});
 });
-router.get('/feed-stocking', (req, res)=>{
+router.get('/feeds-stocking', (req, res)=>{
     res.render('feeds-stocking', {msg: req.query.msg});
 });
 
