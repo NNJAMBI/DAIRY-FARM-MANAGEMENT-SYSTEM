@@ -36,9 +36,9 @@ The appliacation aim at tracking daily activites of a daily farm with a view to 
 - Toxin Binder (In Kg)
 
 ###### Fodder Data
-- Folder (Per Bucket)
-- Folder Name (Per Bucket)
-- Date
+- Fodder Allocation (Per Bucket)
+- Fodder Name (Per Bucket)
+- Date of Entry
 
 ###### Insemination Data
 - AI Cost (per serving)
