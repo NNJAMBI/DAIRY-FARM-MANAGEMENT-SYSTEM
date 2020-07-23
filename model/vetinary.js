@@ -7,7 +7,7 @@ var VetSchema = new Schema({
     typeDisea: String,
     vaccTransp: String,
     vaccStora: String,
-    rvaccHandl: String,
+    vaccHandl: String,
 });
 
 let Vetrecord = mongoose.model('Vetrecord', VetSchema);
