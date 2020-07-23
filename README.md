@@ -2,6 +2,7 @@
 
 ## Objective
 The appliacation aim at tracking daily activites of a daily farm with a view to enhance productivity and manage cost.
+In addition to utilising git and understanding workflow and collaboration
 
 ## Epic
 ##### Admin Role
