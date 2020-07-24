@@ -30,7 +30,7 @@
                 <a class="nav-link" href="/feeds-stocking">Feeds-Stocking</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Fodder</a>
+                <a class="nav-link" href="/fodder">Fodder</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Insemination</a>
@@ -38,8 +38,15 @@
             <li class="nav-item">
                 <a class="nav-link" href="/employees">Employees</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="/vetinary">Vetinary</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Vetinary
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/vetinary">Add Record</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/get-all-vet-details">View Records</a>
+                </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,7 +57,6 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/get-all-milk-records">View Records</a>
                 </div>
-                <a class="nav-link" href="/milkProduction"></a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -83,10 +89,10 @@
             <label class="mr-sm-2" for="inlineFormCustomSelect">Type of Breed</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="typeBreed">
               <option selected>Choose...</option>
-              <option value="1">Fresian</option>
-              <option value="2">Aryshire</option>
-              <option value="3">Guernsey</option>
-              <option value="3">Jersey</option>
+              <option value="Fresian">Fresian</option>
+              <option value="Aryshire">Aryshire</option>
+              <option value="Aryshire">Guernsey</option>
+              <option value="Jersey">Jersey</option>
             </select>
             </div>
             
@@ -95,9 +101,9 @@
                     <label class="mr-sm-2" for="inlineFormCustomSelect">Last Vet Check Up</label>
                     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="checkupDur">
                       <option selected>Choose...</option>
-                      <option value="1">A few days</option>
-                      <option value="2">More than Two Weeks</option>
-                      <option value="3">Month and above</option>
+                      <option value="A few days">A few days</option>
+                      <option value="More than Two Weeks">More than Two Weeks</option>
+                      <option value="Month and above">Month and above</option>
                     </select>
                     </div>
 
@@ -106,9 +112,9 @@
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Issue found</label>
                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="typeDisea">
                           <option selected>Choose...</option>
-                          <option value="1">Foot and Mouth</option>
-                          <option value="2">Rift Valley Fever</option>
-                          <option value="3">Anthrax</option>
+                          <option value="Foot and Mouth">Foot and Mouth</option>
+                          <option value="Rift Valley Fever">Rift Valley Fever</option>
+                          <option value="Anthrax">Anthrax</option>
                         </select>
                         </div>
 

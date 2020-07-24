@@ -27,7 +27,7 @@
                 <a class="nav-link active" href="/">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/feeds-stocking">Feeds-Stocking</a>
+                <a class="nav-link" href="/feedstocking">Feeds Stocking</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/fodder">Fodder</a>
@@ -38,15 +38,8 @@
             <li class="nav-item">
                 <a class="nav-link" href="/employees">Employees</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Vetinary
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/vetinary">Add Record</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/get-all-vet-details">View Records</a>
-                </div>
+            <li class="nav-item">
+                <a class="nav-link" href="/vetinary">Vetinary</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -57,6 +50,7 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/get-all-milk-records">View Records</a>
                 </div>
+                <a class="nav-link" href="/milkProduction"></a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -78,7 +72,7 @@
                     <a class="nav-link active" href="/">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/feeds-stocking">Feeds-Stocking</a>
+                    <a class="nav-link" href="/feedstocking">Feeds Stocking</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/fodder">Fodder</a>
@@ -89,15 +83,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/employees">Employees</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Vetinary
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/vetinary">Add Record</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/get-all-vet-details">View Records</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="/vetinary">Vetinary</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -108,22 +95,38 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/get-all-milk-records">View Records</a>
                     </div>
+                    <a class="nav-link" href="/milkProduction"></a>
                 </li>
             </ul>
             <hr class="d-sm-none">
         </div>
         <div class="col-sm-10 pt-5 pb-5">
             <div class="container">
+                <h2>All Vetinary Records</h2>
+                <hr>
                 <div class="row">
-                    <div class="col-sm-2">
-                        <a href="/get-all-users">All Users</a>
-                        <hr>
-                        <a href="/get-all-milk-records">All Milk Record</a>
-                        <hr>
-                        <a href="/get-all-vet-details">All Vetinary Record</a>
-                        <hr>
-                        <a href="/get-all-insemination-data">All Insemination Record</a>
-                        <hr>
+                    <div class="col-sm-12">
+                        <table class="table">
+                            <tr>
+                                <th class="col">Breed</th>
+                                <th class="col">Duration</th>
+                                <th class="col">Disease</th>
+                                <th class="col">Vaccine Transport</th>
+                                <th class="col">Vaccine Storage</th>
+                                <th class="col">Vaccine Handling</th>
+                            </tr>
+                            <% records.forEach((record)=>{ %>
+                                <tr>
+                                    <td><%= record.typeBreed %></td>
+                                    <td><%= record.checkupDur %></td>
+                                    <td><%= record.typeDisea %></td>
+                                    <td><%= record.vaccTransp %></td>
+                                    <td><%= record.vaccStora %></td>
+                                    <td><%= record.vaccHandl %></td>
+                                </tr>
+                            <% }); %>
+
+                        </table>
                     </div>
                 </div>
             </div>

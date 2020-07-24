@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../model/users');
 const Vetrecord = require('../model/vetinary');
+const Insemination = require('../model/insemination');
 
 const MilkProduction = require('../model/dailyMilkProduction')
 // const { body,validationResult } = require('express-validator/check');
@@ -19,8 +20,8 @@ router.get('/vetinary', (req, res)=>{
     res.render('vetinary', {msg: req.query.msg});
 });
 
-router.get('/feedstocking', (req, res)=>{
-    res.render('feedsstocking', {msg: req.query.msg});
+router.get('/feeds-stocking', (req, res)=>{
+    res.render('feeds-stocking', {msg: req.query.msg});
 });
 
 router.get('/milkProduction', (req, res)=>{
@@ -116,6 +117,10 @@ router.get('/fodder', (req, res)=>{
     res.render('fodder');
 });
 
+router.get('/insemination', (req, res)=>{
+    res.render('insemination', {msg: req.query.msg});
+});
+
 router.get('/get-all-users', (req, res)=>{
     User.find({}, (error, users)=>{
         if(error){
@@ -138,6 +143,56 @@ router.get('/get-all-milk-records', (req, res)=>{
             res.render('allMilkRecords', {
                 records:records
             })
+        }
+    });
+});
+
+router.get('/get-all-vet-details', (req, res)=>{
+    Vetrecord.find({}, (error, records)=>{
+        if(error){
+            console.log(error);
+        } else {
+            console.log(records);
+            res.render('allVetRecords', {
+                records: records
+            });
+        }
+    });
+});
+
+router.post('/save-insemination-data', (req, res)=>{
+    console.log(req);
+    console.log("AI Cost lenght: " + req.body.aiCost.length);
+    if(req.body.aiCost.length <= 3 && req.body.aiCost.length >= 5 &&
+        req.body.aiCost <= 500 && req.body.aiCost >= 15000){
+        res.redirect('/insemination?msg=Oops, The cost should be between the range of 500 to 15000.');
+    } else if(req.body.servingBull === '' && req.body.servingBull.length <= 3){
+        res.redirect('/insemination?msg=Oops, The serving bull name cannot be blank or less than three characters');
+    }  else if(req.body.cowName === '' && req.body.cowName.length <= 3) {
+        res.redirect('/insemination?msg=Oops, The cow name cannot be blank or less than three characters');
+    }  else if(req.body.breed === '' && req.body.breed.length <= 3){
+        res.redirect('/insemination?msg=Oops, The breed cannot be blank or less than three characters')
+    } else {
+        let insemination = new Insemination({
+            aiCost: req.body.aiCost,
+            servingBull: req.body.servingBull,
+            cowName: req.body.cowName,
+            breed: req.body.breed
+        }) ;
+        insemination.save();
+        res.redirect('/insemination?msg=Successfully save insemination data.')
+    }
+});
+
+router.get('/get-all-insemination-data', (req, res)=>{
+    Insemination.find({}, (error, records)=>{
+        if(error){
+            console.log(error);
+        } else {
+            console.log(records);
+            res.render('allInseminationRecords', {
+                records: records
+            });
         }
     });
 });

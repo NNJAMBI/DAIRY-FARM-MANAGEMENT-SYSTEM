@@ -30,7 +30,7 @@
                 <a class="nav-link" href="/feedstocking">Feeds Stocking</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Fodder</a>
+                <a class="nav-link" href="/fodder">Fodder</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Insemination</a>
@@ -38,8 +38,15 @@
             <li class="nav-item">
                 <a class="nav-link" href="/employees">Employees</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/vetinary">Vetinary</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Vetinary
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/vetinary">Add Record</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/get-all-vet-details">View Records</a>
+                </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,7 +57,6 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/get-all-milk-records">View Records</a>
                 </div>
-                <a class="nav-link" href="/milkProduction"></a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -75,7 +81,7 @@
                     <a class="nav-link" href="/feedstocking">Feeds Stocking</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Fodder</a>
+                    <a class="nav-link" href="/fodder">Fodder</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Insemination</a>
@@ -112,7 +118,7 @@
                                 <th class="col">Quantity</th>
                                 <th class="col">TimeStamp</th>
                             </tr>
-                            <% records.forEach(function(record){ %>
+                            <% records.forEach((record)=>{ %>
                                 <tr>
                                     <td><%= record.cow %></td>
                                     <td><%= record.quantity %></td>

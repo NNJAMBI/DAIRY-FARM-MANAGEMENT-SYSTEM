@@ -18,6 +18,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/model/insemination.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/model/users.js">
           <value>
             <set />
@@ -73,12 +78,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/views/allInseminationRecords.ejs">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/views/allMilkRecords.ejs">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/views/allUsers.ejs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/views/allVetRecords.ejs">
           <value>
             <set />
           </value>
@@ -98,6 +113,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/views/feeds-stocking.ejs">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/views/feedsstocking.ejs">
           <value>
             <set />
@@ -109,6 +129,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/views/index.ejs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/views/insemination.ejs">
           <value>
             <set />
           </value>

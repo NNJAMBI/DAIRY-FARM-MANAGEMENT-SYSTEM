@@ -27,16 +27,16 @@
                 <a class="nav-link active" href="/">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/feeds-stocking">Feeds-Stocking</a>
+                <a class="nav-link" href="/feedstocking">Feeds Stocking</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/fodder">Fodder</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Insemination</a>
+                <a class="nav-link" href="/insemination">Insemination</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="/employees">Employees</a>
+                <a class="nav-link" href="/employees">Employees</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -70,56 +70,81 @@
     </div>
 </nav>
 
-<div class="col-sm-8">
-    <h2>Employee Records</h2>
-    <h5>Add Employee Records</h5>
-    <p>This is a form where on can add and view employee records</p>
-    <form action="/action_page.php">
-        <div class="form-group">
-            <label for="name">name:</label>
-            <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2 bg-light pt-5 pb-5">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/feedstocking">Feeds Stocking</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/fodder">Fodder</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/insemination">Insemination</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/employees">Employees</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/vetinary">Vetinary</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Milk Records
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="milkProduction">Add Record</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/get-all-milk-records">View Records</a>
+                    </div>
+                    <a class="nav-link" href="/milkProduction"></a>
+                </li>
+            </ul>
+            <hr class="d-sm-none">
         </div>
-        <div class="form-group">
-            <label for="Id number">ID Number:</label>
-            <input type="id number" class="form-control" id="id number" placeholder="Enter ID number" ID number="id number">
+        <div class="col-sm-10 pt-5 pb-5">
+            <div class="container">
+                <h2>All Milk Records</h2>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="table">
+                            <tr>
+                                <th class="col">Ai Cost</th>
+                                <th class="col">Serving Bull</th>
+                                <th class="col">Cow Name</th>
+                                <th class="col">Serving Bull</th>
+                                <th class="col">Date</th>
+                            </tr>
+                            <% records.forEach((record)=>{ %>
+                                <tr>
+                                    <td><%= record.aiCost %></td>
+                                    <td><%= record.servingBull %></td>
+                                    <td><%= record.cowName %></td>
+                                    <td><%= record.breed %></td>
+                                    <td><%= record.date %></td>
+                                </tr>
+                            <% }); %>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="Phone Number">Phone Number:</label>
-            <input type="Phone Number" class="form-control" id="Phone Number" placeholder="Enter Phone Number" Phone Number="Phone Number">
-        </div>
-        <div class="form-group">
-            <label for="Salary">Salary:</label>
-            <input type="Salary" class="form-control" id="Salary" placeholder="Enter Salary" Salary="Salary">
-        </div>
-        <div class="form-group">
-            <label for="Employement Date">Employement Date:</label>
-            <input type="Employement Date" class="form-control" id="Employement Date" placeholder="Enter Employement Date" Employement Date="Employement Date">
-        </div>
-        <div class="form-group">
-            <label for="name">Termination Date:</label>
-            <input type="Termination Date" class="form-control" id="Termination Date" placeholder="Enter Termination Date" Termination Date="Termination Date">
-        </div>
-        <div class="form-group">
-            <label for="status">Status:</label>
-            <select class="form-control" id="status" name="status" required>
-                <option value="">Select status</option>
-                <option value="Permanent">Permanent</option>
-                <option value="casual">casual</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
-</div>
+    </div>
 </div>
 
 <div class="container-fluid" style="margin-bottom:0">
     <div class="row">
-        <div class="col-sm-2 bg-light pt-3">
+        <div class="col-sm-2 pt-3">
             <p class="small">Dairy Farm Management System @ 2020.</p>
             <hr class="d-sm-none">
         </div>
-        <div class="col-sm-10 pt-3">
+        <div class="col-sm-10 pt-3 bg-light">
             <div class="container">
                 <p class="small">
                     Development Team:
