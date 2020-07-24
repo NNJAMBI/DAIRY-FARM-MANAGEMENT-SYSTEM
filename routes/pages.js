@@ -251,4 +251,18 @@ router.get('/get-all-insemination-data', (req, res)=>{
     });
 });
 
+
+router.get('/get-all-feedstocking-data', (req, res)=>{
+    Feedrecord.find({}, (error, records)=>{
+        if(error){
+            console.log(error);
+        } else {
+            console.log(records);
+            res.render('allFeedStockingRecords', {
+                records: records
+            });
+        }
+    });
+});
+
 module.exports = router;
