@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../model/users');
+const Employees = require('../model/Employees');
 const Vetrecord = require('../model/vetinary');
 const Insemination = require('../model/insemination');
 
@@ -113,6 +114,37 @@ router.get('/employees', (req, res)=>{
     res.render('Employees');
 });
 
+router.post('/save-employee', (req, res)=>{
+    console.log(req.body);
+        if(req.body.name === '' && req.body.name.length <= 2 && req.body.name.length >= 20) {
+            res.redirect('/employees?msg=Oops, first name cannot be blank or less than 2 characters.');
+        } else if(req.body.idnumber === '' && req.body.idnumber.length < 8){
+            res.redirect('/employees?msg=Oops, last name cannot be blank or less than 2 characters.');
+        } else if(req.body.phoneNumber === '' && req.body.phoneNumber.length <= 10){
+            res.redirect('/employees?msg=Oops, username cannot be blank or less than 3 characters.');
+        } else if(req.body.salary === '' && req.body.salary.length <= 3 && req.body.salary >= 8){
+            res.redirect('/employees?msg=Oops, email cannot be blank or less than 5 characters.');
+        } else if(req.body.employmentDate === ''){
+            res.redirect('/employees?msg=Oops, employmentDate cannot be blank or less than 8 characters.');
+        } else if(req.body.terminationDate === '' ){
+            res.redirect('/employees?msg=Oops, confirm terminationDate cannot be blank or less than 8 characters.');
+        }
+        else {
+
+                let newEmployee = new Employees({
+                    name: req.body.name,
+                    idNumber: req.body.idnumber,
+                    phoneNumber:req.body.phoneNumber,
+                    salary: req.body.salary,
+                    employmentDate: req.body.employmentDate,
+                    terminationDate: req.body.terminationDate,
+                    status: req.body.status
+                });
+                newEmployee.save();
+                res.redirect('/employees?msg=Employee Saved Successfully.');
+
+        }
+});
 router.get('/fodder', (req, res)=>{
     res.render('fodder');
 });

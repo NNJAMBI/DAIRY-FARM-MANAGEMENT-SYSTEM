@@ -74,30 +74,30 @@
     <h2>Employee Records</h2>
     <h5>Add Employee Records</h5>
     <p>This is a form where on can add and view employee records</p>
-    <form action="/action_page.php">
+    <form action="/save-employee" method = "POST" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="name">name:</label>
-            <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
+            <label for="name">Name:</label>
+            <input type="name" class="form-control" id="name" placeholder="Enter name" name="name" required>
         </div>
         <div class="form-group">
             <label for="Id number">ID Number:</label>
-            <input type="id number" class="form-control" id="id number" placeholder="Enter ID number" ID number="id number">
+            <input type="number" class="form-control" id="idnumber" placeholder="Enter ID number" name="idnumber" required>
         </div>
         <div class="form-group">
             <label for="Phone Number">Phone Number:</label>
-            <input type="Phone Number" class="form-control" id="Phone Number" placeholder="Enter Phone Number" Phone Number="Phone Number">
+            <input type="number" class="form-control" id="phoneNumber" placeholder="Enter Phone Number" name="phoneNumber" required>
         </div>
         <div class="form-group">
             <label for="Salary">Salary:</label>
-            <input type="Salary" class="form-control" id="Salary" placeholder="Enter Salary" Salary="Salary">
+            <input type="number" class="form-control" id="salary" placeholder="Enter Salary" name="salary" required>
         </div>
         <div class="form-group">
-            <label for="Employement Date">Employement Date:</label>
-            <input type="Employement Date" class="form-control" id="Employement Date" placeholder="Enter Employement Date" Employement Date="Employement Date">
+            <label for="Employment Date">Employment Date:</label>
+            <input type="date" class="form-control" id="employmentDate" placeholder="Enter Employment Date" name="employmentDate" required> 
         </div>
         <div class="form-group">
             <label for="name">Termination Date:</label>
-            <input type="Termination Date" class="form-control" id="Termination Date" placeholder="Enter Termination Date" Termination Date="Termination Date">
+            <input type="date" class="form-control" id="terminationDate" placeholder="Enter Termination Date" name="terminationDate" required>
         </div>
         <div class="form-group">
             <label for="status">Status:</label>
