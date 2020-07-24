@@ -33,20 +33,13 @@
                 <a class="nav-link" href="/fodder">Fodder</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/insemination">Insemination</a>
+                <a class="nav-link" href="#">Insemination</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/employees">Employees</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Vetinary
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/vetinary">Add Record</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/get-all-vet-details">View Records</a>
-                </div>
+            <li class="nav-item">
+                <a class="nav-link" href="/vetinary">Vetinary</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -57,6 +50,7 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/get-all-milk-records">View Records</a>
                 </div>
+                <a class="nav-link" href="/milkProduction"></a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -84,7 +78,7 @@
                     <a class="nav-link" href="/fodder">Fodder</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/insemination">Insemination</a>
+                    <a class="nav-link" href="#">Insemination</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/employees">Employees</a>
@@ -108,25 +102,19 @@
         </div>
         <div class="col-sm-10 pt-5 pb-5">
             <div class="container">
-                <h2>All Insemination Records</h2>
+                <h2>All Feed Stocking Records</h2>
                 <hr>
                 <div class="row">
                     <div class="col-sm-12">
                         <table class="table">
                             <tr>
-                                <th class="col">Ai Cost</th>
-                                <th class="col">Serving Bull</th>
-                                <th class="col">Cow Name</th>
-                                <th class="col">Serving Bull</th>
-                                <th class="col">Date</th>
+                                <th class="col">Type of Suppliments</th>
+                                <th class="col">Type of Cow</th>
                             </tr>
                             <% records.forEach((record)=>{ %>
                                 <tr>
-                                    <td><%= record.aiCost %></td>
-                                    <td><%= record.servingBull %></td>
-                                    <td><%= record.cowName %></td>
-                                    <td><%= record.breed %></td>
-                                    <td><%= record.date %></td>
+                                    <td><%= record.typeSuppliment %></td>
+                                    <td><%= record.typeCow %></td>
                                 </tr>
                             <% }); %>
 
