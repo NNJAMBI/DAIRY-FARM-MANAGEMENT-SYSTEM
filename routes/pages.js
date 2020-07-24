@@ -6,6 +6,7 @@ const Vetrecord = require('../model/vetinary');
 const Insemination = require('../model/insemination');
 const MilkProduction = require('../model/dailyMilkProduction');
 const Feedrecord = require('../model/feeds-stocking');
+const Fodderentry = require('../model/fodder');
 
 // const { body,validationResult } = require('express-validator/check');
 // const { sanitizeBody } = require('express-validator/filter');
@@ -168,7 +169,31 @@ router.post('/save-employee', (req, res)=>{
         }
 });
 router.get('/fodder', (req, res)=>{
-    res.render('fodder');
+    res.render('fodder', {msg: req.query.msg});
+});
+
+router.post('/save-fodder', (req, res)=>{
+    console.log(req.body);
+        if(req.body.fodderType === '' ){
+            res.redirect('/fodder?msg=Oops, fodderType cannot be blank');
+        } else if(req.body.bucketsNumber === '' && req.body.bucketsNumber.length < 100){
+            res.redirect('/fodder?msg=Oops, bucketsNumber cannot be blank');
+        } else if(req.body.entryDate === ''){
+            res.redirect('/fodder?msg=Oops, entryDate cannot be blank');
+        } else if(req.body.entryTIme === '' ){
+            res.redirect('/fodder?msg=Oops, confirm entryTime cannot be blank');
+        }
+        else {
+                let fodderSchema = new Fodderentry({
+                    fodderType: req.body.fodderType,
+                    bucketsNumber: req.body.bucketsNumber,
+                    entryDate: req.body.entryDate,
+                    entryTime: req.body.entryTime,
+                });
+                fodderSchema.save();
+                res.redirect('/fodder?msg=Fodder Entry Saved Successfully.');
+
+        }
 });
 
 router.get('/insemination', (req, res)=>{

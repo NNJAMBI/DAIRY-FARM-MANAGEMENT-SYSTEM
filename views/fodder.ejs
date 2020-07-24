@@ -74,6 +74,13 @@
     <h2>Fodder Entries</h2>
     
     <p> Add and change the Fodder Entries</p>
+    <p class="border-success">
+        <% if (typeof msg !== 'undefined'){ %>
+            <%= msg %>
+        <% } else {%>
+            <%= msg='' %>
+        <% } %>
+    </p>
     <form action="/action_page.php">
         <div class="form-group">
             <label for="name">Fodder Type:</label>
