@@ -114,12 +114,14 @@
                     <div class="col-sm-12">
                         <table class="table">
                             <tr>
-                                <th class="col">Cow Name</th>
-                                <th class="col">Quantity</th>
-                                <th class="col">TimeStamp</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Cow Name</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">TimeStamp</th>
                             </tr>
                             <% records.forEach((record)=>{ %>
                                 <tr>
+                                    <th scope="row">1</th>
                                     <td><%= record.cow %></td>
                                     <td><%= record.quantity %></td>
                                     <td><%= record.timeStamp %></td>

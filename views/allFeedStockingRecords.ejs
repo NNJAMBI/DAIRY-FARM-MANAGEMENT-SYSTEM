@@ -114,11 +114,13 @@
                     <div class="col-sm-12">
                         <table class="table">
                             <tr>
-                                <th class="col">Type of Suppliments</th>
-                                <th class="col">Type of Cow</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Type of Suppliments</th>
+                                <th scope="col">Type of Cow</th>
                             </tr>
                             <% records.forEach((record)=>{ %>
                                 <tr>
+                                    <th scope="row">1</th>
                                     <td><%= record.typeSuppliment %></td>
                                     <td><%= record.typeCow %></td>
                                 </tr>

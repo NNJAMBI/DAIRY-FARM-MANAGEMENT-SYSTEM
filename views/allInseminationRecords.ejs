@@ -114,14 +114,16 @@
                     <div class="col-sm-12">
                         <table class="table">
                             <tr>
-                                <th class="col">Ai Cost</th>
-                                <th class="col">Serving Bull</th>
-                                <th class="col">Cow Name</th>
-                                <th class="col">Serving Bull</th>
-                                <th class="col">Date</th>
+                                <th scope="row">#</th>
+                                <th scope="col">Ai Cost</th>
+                                <th scope="col">Serving Bull</th>
+                                <th scope="col">Cow Name</th>
+                                <th scope="col">Serving Bull</th>
+                                <th scope="col">Date</th>
                             </tr>
                             <% records.forEach((record)=>{ %>
                                 <tr>
+                                    <th scope="row">1</th>
                                     <td><%= record.aiCost %></td>
                                     <td><%= record.servingBull %></td>
                                     <td><%= record.cowName %></td>

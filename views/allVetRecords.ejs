@@ -108,15 +108,17 @@
                     <div class="col-sm-12">
                         <table class="table">
                             <tr>
-                                <th class="col">Breed</th>
-                                <th class="col">Duration</th>
-                                <th class="col">Disease</th>
-                                <th class="col">Vaccine Transport</th>
-                                <th class="col">Vaccine Storage</th>
-                                <th class="col">Vaccine Handling</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Breed</th>
+                                <th scope="col">Last Check Up</th>
+                                <th scope="col">Disease</th>
+                                <th scope="col">Vaccine Transport</th>
+                                <th scope="col">Vaccine Storage</th>
+                                <th scope="col">Vaccine Handling</th>
                             </tr>
                             <% records.forEach((record)=>{ %>
                                 <tr>
+                                    <th scope="row">1</th>
                                     <td><%= record.typeBreed %></td>
                                     <td><%= record.checkupDur %></td>
                                     <td><%= record.typeDisea %></td>

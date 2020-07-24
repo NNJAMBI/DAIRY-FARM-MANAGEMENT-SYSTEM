@@ -119,14 +119,16 @@
                     <div class="col-sm-12">
                         <table class="table">
                             <tr>
-                                <th class="col">Name</th>
-                                <th class="col">Email</th>
-                                <th class="col">Role</th>
-                                <th class="col">Date Created</th>
-                                <th class="col">Date Updated</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Role</th>
+                                <th scope="col">Date Created</th>
+                                <th scope="col">Date Updated</th>
                             </tr>
                             <% users.forEach(function(user){ %>
                                 <tr>
+                                    <th scope="row">1</th>
                                     <td><%= user.firstName %> <%= user.lastName %></td>
                                     <td><%= user.email %></td>
                                     <td><%= user.role %></td>
