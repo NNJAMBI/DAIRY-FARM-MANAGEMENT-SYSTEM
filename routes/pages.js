@@ -5,6 +5,8 @@ const Employees = require('../model/employees');
 const Vetrecord = require('../model/vetinary');
 const Insemination = require('../model/insemination');
 const MilkProduction = require('../model/dailyMilkProduction');
+const Feedrecord = require('../model/feeds-stocking');
+
 // const { body,validationResult } = require('express-validator/check');
 // const { sanitizeBody } = require('express-validator/filter');
 
@@ -105,6 +107,28 @@ router.post('/vet-info', (req, res)=>{
                  }) ;
                 vetSchema.save();
                 res.redirect('/vetinary?msg=User Saved Successfully.');
+            }
+
+});
+
+
+
+router.post('/feed-info', (req, res)=>{
+    console.log(req.body);
+        if(req.body.typeSuppliment === '') {
+            res.redirect('/feeds-stocking?msg=Oops, kindly select type of suppliment.');
+        } else if(req.body.typeCow === ''){
+            res.redirect('/feeds-stocking?msg=Oops, kindly select type of cow.');
+        // } else if(req.body.typeHeifer === ''){
+        //     res.redirect('/feeds-stocking?msg=Oops, kindly provide type of cow.');
+        } 
+        else {
+                let feedSchema = new Feedrecord({
+                    typeSuppliment: req.body.typeSuppliment,
+                    typeCow: req.body.typeCow,
+                 }) ;
+                 feedSchema.save();
+                res.redirect('/feeds-stocking?msg=User Saved Successfully.');
             }
 
 });

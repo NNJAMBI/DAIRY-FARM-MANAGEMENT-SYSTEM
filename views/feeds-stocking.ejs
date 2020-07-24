@@ -65,6 +65,16 @@
 </nav>
 
 <div class="container" style="margin-top:30px">
+
+    <h2>Feed-Stocking</h2>
+    <p>Please fill up the form below to add user.</p>
+    <p class="border-success">
+      <% if (typeof msg !== 'undefined'){ %>
+          <%= msg %>
+      <% } else {%>
+          <%= msg='' %>
+      <% } %>
+  </p>
     <div class="row mt-5 mb-5">
         <div class="col-sm-4">
             <h2>About Daily Farm System</h2>
@@ -79,10 +89,10 @@
                     <a class="nav-link active" href="/feedstocking">Feeds Stocking</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Fodder</a>
+                    <a class="nav-link" href="/fodder">Fodder</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Insemination</a>
+                    <a class="nav-link" href="/insemination">Insemination</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/employees">Employees</a>
@@ -108,20 +118,47 @@
             <h2>Feed Stocking</h2>
             <h5>Add new item to be stocked, July 23, 2020</h5>
             <p>More Description</p>
-            <form action="/action_page.php">
-                <div class="form-group">
-                    <label for="name">name:</label>
-                    <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
+
+            <form action="/feed-info" method="POST">
+
+                <div class="container">
+
+                <div class="form-row  mx-2 align-items-center">
+                    <div class="col-sm-10 mx-2 my-1">
+                      <label class="mr-sm-2" for="inlineFormCustomSelect">Type of Suppliments</label>
+                      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="typeSuppliment">
+                        <option selected>Choose...</option>
+                        <option value="Maize Germ">Maize Germ</option>
+                        <option value="Cotton">Cotton</option>
+                        <option value="Sun Flower">Sun Flower</option>
+                        <option value="Lime">Lime</option>
+                        <option value="Premix">Premix</option>
+                        <option value="Wheat Poland">Wheat Poland</option>
+                        <option value="Wheat Bran">Wheat Bran</option>
+                        <option value="Toxin Binder">Toxin Binder</option>
+                        <option value="Macklick Super">Macklick Super</option>
+                        <option value="Macklick Plus">Macklick Plus</option>
+                      </select>
+                    </div>
+
+                    <div class="col-sm-10  pb-3 mx-2 my-1">
+                        <label class="mr-sm-2" for="inlineFormCustomSelect">Type of Cow</label>
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="typeCow">
+                          <option selected>Choose...</option>
+                          <option value="Lactataing">Lactataing</option>
+                          <option value="Heifers">Heifers</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
                 </div>
-                <div class="form-group">
-                    <label for="name">name:</label>
-                    <input type="password" class="form-control" id="name" placeholder="Enter name" name="name">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            
             </form>
         </div>
     </div>
 </div>
+
+
 
 <div class="container-fluid" style="margin-bottom:0">
     <div class="row">
