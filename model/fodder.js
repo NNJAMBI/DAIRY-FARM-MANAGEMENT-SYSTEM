@@ -6,7 +6,6 @@ var fodderSchema = new Schema({
     bucketsNumber: Number,
     entryDate: Date,
     entryTime: Time,
-
 });
 
 let Fodderentry = mongoose.model('Fodderentry', fodderSchema);
