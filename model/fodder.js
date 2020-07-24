@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-var fodderSchema = new Schema({
+var FodderSchema = new Schema({
     fodderType: String,
     bucketsNumber: Number,
     entryDate: Date,
-    entryTime: Time,
+    // entryTime: Time,
 });
 
-let Fodderentry = mongoose.model('Fodderentry', fodderSchema);
+let Fodderentry = mongoose.model('Fodderentry', FodderSchema);
 
 module.exports = Fodderentry;

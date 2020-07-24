@@ -172,7 +172,7 @@ router.get('/fodder', (req, res)=>{
     res.render('fodder', {msg: req.query.msg});
 });
 
-router.post('/save-fodder', (req, res)=>{
+router.post('/fodder-info', (req, res)=>{
     console.log(req.body);
         if(req.body.fodderType === '' ){
             res.redirect('/fodder?msg=Oops, fodderType cannot be blank');
@@ -180,8 +180,8 @@ router.post('/save-fodder', (req, res)=>{
             res.redirect('/fodder?msg=Oops, bucketsNumber cannot be blank');
         } else if(req.body.entryDate === ''){
             res.redirect('/fodder?msg=Oops, entryDate cannot be blank');
-        } else if(req.body.entryTIme === '' ){
-            res.redirect('/fodder?msg=Oops, confirm entryTime cannot be blank');
+        // } else if(req.body.entryTIme === '' ){
+        //     res.redirect('/fodder?msg=Oops, confirm entryTime cannot be blank');
         }
         else {
                 let fodderSchema = new Fodderentry({
@@ -289,5 +289,19 @@ router.get('/get-all-feedstocking-data', (req, res)=>{
         }
     });
 });
+
+// router.get('/get-all-employee-records', (req, res)=>{
+//     Employees.find({}, (error, records)=>{
+//         if(error){
+//             console.log(error);
+//         } else {
+//             console.log(records);
+//             res.render('allEmployeeRecords',
+//                 records: records
+//             });
+//         }
+//     });
+// });
+
 
 module.exports = router;

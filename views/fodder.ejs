@@ -81,23 +81,23 @@
             <%= msg='' %>
         <% } %>
     </p>
-    <form action="/action_page.php">
+    <form action="/fodder-info" method="POST">
         <div class="form-group">
-            <label for="name">Fodder Type:</label>
-            <input type="name" class="form-control" id="name" placeholder="Enter Fodder Type" name="name">
+            <label for="fodderType">Fodder Type:</label>
+            <input type="name" class="form-control" id="fodderType" placeholder="Enter Fodder Type" name="fodderType">
         </div>
         <div class="form-group">
-            <label for="Quantities in Buckets">Number of Buckets:</label>
-            <input type="number" class="form-control" id="Number of Buckets" placeholder="Enter No. of Buckets" ID number="number" min="1" max="100" >
+            <label for="bucketsNumber">Number of Buckets:</label>
+            <input type="number" class="form-control" id="bucketsNumber" placeholder="Enter No. of Buckets" ID number="bucketsNumber" name="bucketsNumber" min="1" max="100" >
         </div>
         <div class="form-group">
-            <label for="Date of Entry">Date of Entry:</label>
-            <input type="Date" class="form-control" id="Date" placeholder="Enter Date" Date of Entry="Date of Entry">
+            <label for="entryDate">Date of Entry:</label>
+            <input type="Date" class="form-control" id="entryDate" placeholder="Enter Date" Date of Entry="Date of Entry" name="entryDate">
         </div>
-        <div class="form-group">
-            <label for="Time of Entry">Time of Entry:</label>
-            <input type="Time" class="form-control" id="Time" placeholder="Enter Time" Time of Entry="TIme of Entry">
-        </div>
+        <!-- <div class="form-group">
+            <label for="entryDate">Time of Entry:</label>
+            <input type="Time" class="form-control" id="entryDate" placeholder="Enter Time" Time of Entry="TIme of Entry">
+        </div> -->
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

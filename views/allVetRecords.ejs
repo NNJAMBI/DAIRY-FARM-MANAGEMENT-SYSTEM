@@ -33,7 +33,7 @@
                 <a class="nav-link" href="/fodder">Fodder</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Insemination</a>
+                <a class="nav-link" href="/insemination">Insemination</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/employees">Employees</a>
@@ -88,12 +88,12 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Milk Records
+                        Employee Records
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="milkProduction">Add Record</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/get-all-milk-records">View Records</a>
+                        <a class="dropdown-item" href="/get-all-employee-records">View Records</a>
                     </div>
                     <a class="nav-link" href="/milkProduction"></a>
                 </li>
@@ -102,29 +102,29 @@
         </div>
         <div class="col-sm-10 pt-5 pb-5">
             <div class="container">
-                <h2>All Vetinary Records</h2>
+                <h2>All Employee Records</h2>
                 <hr>
                 <div class="row">
                     <div class="col-sm-12">
                         <table class="table">
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Breed</th>
-                                <th scope="col">Last Check Up</th>
-                                <th scope="col">Disease</th>
-                                <th scope="col">Vaccine Transport</th>
-                                <th scope="col">Vaccine Storage</th>
-                                <th scope="col">Vaccine Handling</th>
+                                <th scope="col">Employee Name</th>
+                                <th scope="col">Employee ID</th>
+                                <th scope="col">Contact</th>
+                                <th scope="col">Entry Date</th>
+                                <th scope="col">Termi Date</th>
+                                <th scope="col">Terms</th>
                             </tr>
                             <% records.forEach((record)=>{ %>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td><%= record.typeBreed %></td>
-                                    <td><%= record.checkupDur %></td>
-                                    <td><%= record.typeDisea %></td>
-                                    <td><%= record.vaccTransp %></td>
-                                    <td><%= record.vaccStora %></td>
-                                    <td><%= record.vaccHandl %></td>
+                                    <td><%= record.name %></td>
+                                    <td><%= record.idNumber %></td>
+                                    <td><%= record.phoneNumber %></td>
+                                    <td><%= record.employmentDate %></td>
+                                    <td><%= record.terminationDate %></td>
+                                    <td><%= record.status %></td>
                                 </tr>
                             <% }); %>
 
