@@ -37,9 +37,9 @@ In addition to utilising git and understanding workflow and collaboration
 - Toxin Binder (In Kg)
 
 ###### Fodder Data
-- Folder (Per Bucket)
-- Folder Name (Per Bucket)
-- Date
+- Fodder Allocation (Per Bucket)
+- Fodder Name (Per Bucket)
+- Date of Entry
 
 ###### Insemination Data
 - AI Cost (per serving)
